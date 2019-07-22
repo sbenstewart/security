@@ -10,6 +10,17 @@ $result = mysqli_query($conn, "SELECT * FROM users ORDER BY id DESC"); // using 
 <html>
 <head>	
 	<title>Homepage</title>
+<script>
+var getCookies = function(){
+  var pairs = document.cookie.split(";");
+  var cookies = {};
+  for (var i=0; i<pairs.length; i++){
+    var pair = pairs[i].split("=");
+    cookies[(pair[0]+'').trim()] = unescape(pair[1]);
+  }
+  return cookies;
+}
+</script>
 </head>
 
 <body>

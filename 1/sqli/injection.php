@@ -2,7 +2,7 @@
 $username = $_POST["username"];
 $password = $_POST["password"];
 $servername = "localhost";
-$conn = new mysqli($servername,"root","","sukin");
+$conn = new mysqli($servername,"root","","sqli");
 if($conn->connect_error)
 {
 die("connection failed:");
