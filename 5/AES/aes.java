@@ -6,23 +6,7 @@ import javax.crypto.SecretKey;
 
 public class aes {
 	static Cipher cipher;
-
-	public static void main(String[] args) throws Exception {
-		KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
-		keyGenerator.init(128);
-		SecretKey secretKey = keyGenerator.generateKey();
-		cipher = Cipher.getInstance("AES");
-
-		String plainText = "India is democratic";
-		System.out.println("Plain Text Before Encryption: " + plainText);
-
-		String encryptedText = encrypt(plainText, secretKey);
-		System.out.println("Encrypted Text After Encryption: " + encryptedText);
-
-		String decryptedText = decrypt(encryptedText, secretKey);
-		System.out.println("Decrypted Text After Decryption: " + decryptedText);
-	}
-
+	
 	public static String encrypt(String plainText, SecretKey secretKey)
 			throws Exception {
 		byte[] plainTextByte = plainText.getBytes();
@@ -42,4 +26,22 @@ public class aes {
 		String decryptedText = new String(decryptedByte);
 		return decryptedText;
 	}
+
+	public static void main(String[] args) throws Exception {
+		KeyGenerator keyGenerator = KeyGenerator.getInstance("AES");
+		keyGenerator.init(128);
+		SecretKey secretKey = keyGenerator.generateKey();
+		cipher = Cipher.getInstance("AES");
+
+		String plainText = "India is democratic";
+		System.out.println("Plain Text Before Encryption: " + plainText);
+
+		String encryptedText = encrypt(plainText, secretKey);
+		System.out.println("Encrypted Text After Encryption: " + encryptedText);
+
+		String decryptedText = decrypt(encryptedText, secretKey);
+		System.out.println("Decrypted Text After Decryption: " + decryptedText);
+	}
+
+	
 }
